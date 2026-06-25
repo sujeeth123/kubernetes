@@ -10,21 +10,21 @@ spec:
   - http:
       paths:
       - path: /nginx(/|$)(.*)
-        pathType: ImplementationSpecific   
+        pathType: ImplementationSpecific   # ✅ changed from Prefix
         backend:
           service:
             name: nginx
             port:
               number: 80
       - path: /httpd(/|$)(.*)
-        pathType: ImplementationSpecific   
+        pathType: ImplementationSpecific   # ✅ changed from Prefix
         backend:
           service:
             name: httpd
             port:
               number: 80
       - path: /(.*)
-        pathType: ImplementationSpecific   
+        pathType: ImplementationSpecific   # ✅ changed from Prefix
         backend:
           service:
             name: your-default-service
